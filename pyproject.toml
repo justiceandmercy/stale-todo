@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stale-todo"
+version = "0.1.0"
+description = "Find stale TODO/FIXME/HACK/XXX comments and rank them by age via git blame."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "stale-todo contributors" }]
+keywords = ["todo", "code-quality", "git", "lint"]
+
+[project.scripts]
+stale-todo = "stale_todo.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["stale_todo*"]
